@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, emoji, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@keyframes slideEmojis {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Apply animation to the emojis */
+.animate-slide-emojis {
+  animation: slideEmojis 10s linear infinite;
+}
+
+/* Ensure the emoji container is positioned correctly */
+/* Emoji container for positioning */
+.emoji-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2%; /* Adjust as per your layout */
+  width: 100%;
+  z-index: 20; /* Ensure it's on top */
+  overflow: hidden;
+  height: auto;
+}
+
+/* Wrapper for all emojis */
+.emoji-wrapper {
+  display: flex;
+  gap: 10px; /* Spacing between emojis */
+  font-size: 5rem; /* Increase the font size of the emojis */
+  animation: slideEmojis 10s linear infinite;
+  white-space: nowrap; /* Prevent emojis from wrapping */
+}
+
+/* Keyframes for sliding the emoji across */
+@keyframes slideEmojis {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  10%, 90% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+/* Style for individual emojis */
+.emoji-wrapper .emoji {
+  opacity: 0;
+  animation: emojiSlide 10s ease-in-out infinite;
+  animation-timing-function: ease-in-out;
+  transform: scale(1);
+}
+
+/* Each emoji appears one after the other */
+@keyframes emojiSlide {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.5); /* Make emoji bigger when it's visible */
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* Delay for each emoji to make them appear one after another */
+.emoji-wrapper .emoji:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.emoji-wrapper .emoji:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.emoji-wrapper .emoji:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.emoji-wrapper .emoji:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.emoji-wrapper .emoji:nth-child(5) {
+  animation-delay: 8s;
+}
+
+.emoji-wrapper .emoji:nth-child(6) {
+  animation-delay: 10s;
+}
+
+.emoji-wrapper .emoji:nth-child(7) {
+  animation-delay: 12s;
+}
+
+.emoji-wrapper .emoji:nth-child(8) {
+  animation-delay: 14s;
+}
+
+.emoji-wrapper .emoji:nth-child(9) {
+  animation-delay: 16s;
+}
+
+.emoji-wrapper .emoji:nth-child(10) {
+  animation-delay: 18s;
+}
+/* Quote container positioning */
+/* Keyframe animation for sliding from left */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Keyframe animation for sliding from right */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the slide-in animations to the buttons */
+.button-slide-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.button-slide-right {
+  animation: slideInRight 1s ease-out forwards;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out; /* Apply animation */
+}
+
