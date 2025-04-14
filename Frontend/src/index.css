@@ -37,7 +37,7 @@ body {
 .emoji-wrapper {
   display: flex;
   gap: 10px; /* Spacing between emojis */
-  font-size: 5rem; /* Increase the font size of the emojis */
+  font-size: 2rem; /* Increase the font size of the emojis */
   animation: slideEmojis 10s linear infinite;
   white-space: nowrap; /* Prevent emojis from wrapping */
 }
@@ -172,3 +172,15 @@ body {
   animation: fadeInUp 1s ease-out; /* Apply animation */
 }
 
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
